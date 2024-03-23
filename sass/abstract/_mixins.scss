@@ -30,6 +30,8 @@ $breakpoint argument choices:
 - tab-port
 - tab-land
 - big-desktop
+ Order of writing media query for:
+  Base + Typography > General Layout + grid > page layout > components
 */
 @mixin respond($breakpoint) {
   @if ($breakpoint == phone) {
