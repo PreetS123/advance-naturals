@@ -15,6 +15,10 @@
     background-color: rgba($color-white, 0.5);
     transition: all 0.3s;
 
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       outline: none;
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
@@ -46,10 +50,14 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
-   &__radio-input{
+  &__radio-input {
     display: none;
-   }
+  }
   &__radio-label {
     font-size: $default-font-size;
     cursor: pointer;
@@ -78,7 +86,7 @@
       transform: translate(-50%, -50%);
       background-color: $color-primary;
       opacity: 0;
-      transition: opacity .2;
+      transition: opacity 0.2;
     }
   }
 

@@ -71,18 +71,20 @@
         url(../../img/nat-5.jpg);
     }
     &--2 {
-      background-image:linear-gradient(
-        to right bottom,
-        $color-primary-light,
-        $color-primary-dark
-      ), url(../../img/nat-6.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../../img/nat-6.jpg);
     }
     &--3 {
-      background-image:linear-gradient(
-        to right bottom,
-        $color-tertiary-light,
-        $color-tertiary-dark
-      ), url(../../img/nat-7.jpg);
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../../img/nat-7.jpg);
     }
   }
 
@@ -100,7 +102,7 @@
   &__heading-span {
     padding: 1rem 1.5rem;
     box-decoration-break: clone;
-    --webkit-box-decoration-break:clone;
+    --webkit-box-decoration-break: clone;
     &--1 {
       background-image: linear-gradient(
         to right bottom,
@@ -109,41 +111,41 @@
       );
     }
     &--2 {
-        background-image: linear-gradient(
-          to right bottom,
-          rgba($color-primary-light, 0.85),
-          rgba($color-primary-dark, 0.85)
-        );
-      }
-      &--3 {
-        background-image: linear-gradient(
-          to right bottom,
-          rgba($color-tertiary-light, 0.85),
-          rgba($color-tertiary-dark, 0.85)
-        );
-      }
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
   }
 
-  &__details{
+  &__details {
     padding: 3rem;
-    ul{
-        list-style: none;
-        color: $color-black;
-        width: 80%;
-        margin: 0 auto;
-        li{
-            text-align: center;
-            font-size: 1.5rem;
-            padding: 1rem;
-            &:not(:last-child){
-                border-bottom: 1px solid $color-grey-light-2;
-            }
+    ul {
+      list-style: none;
+      color: $color-black;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
         }
+      }
     }
   }
 
   //back side styling
-  &__cta{
+  &__cta {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -152,20 +154,68 @@
     text-align: center;
   }
 
-  &__price-box{
+  &__price-box {
     text-align: center;
     color: $color-white;
     margin-bottom: 8rem;
   }
 
-  &__price-only{
+  &__price-only {
     font-size: 1.4rem;
-    text-transform:uppercase;
+    text-transform: uppercase;
   }
 
-  &__price-value{
+  &__price-value {
     font-size: 6rem;
     font-weight: 100;
   }
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 3px;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
+
+    &__side {
+      height: auto;
+      position: relative;
+        box-shadow: none;
+      &--back {
+        transform: rotateY(0);
+        padding: 2rem;
+        clip-path: polygon(0 15%, 100% 0, 100% 100%,0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+    &__details{
+      padding: 1rem 2rem;
+    }
+    &__picture{
+      height: 25rem;
+    }
+    //back side styling
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+    }
+
+    &__price-box {
+      margin-bottom: 2rem;
+    }
+
+    &__price-only {
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+    &__price-value {
+      font-size: 4rem;
+    }
+    
+  }
 }
