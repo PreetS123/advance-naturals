@@ -2,7 +2,7 @@
   width: 100%;
   height: 100vh;
   opacity: 0.9;
-  background-color: rgba($color-black, 0.8);
+  background-color: rgba($color-black, 0.6);
   padding: 2%;
   margin: 1%;
   position: fixed;
@@ -12,6 +12,11 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.8s;
+  backdrop-filter: blur(10px);
+  @include respond(tab-port){
+   padding: 0;
+   margin: 0;
+  }
 
   &__content {
     @include absCenter;
@@ -26,6 +31,13 @@
     opacity: 0;
     transform:translate(-50%,-50%) scale(.25);
     transition: all .5s .2s;
+    @include respond(tab-port){
+      width: 85%;
+      padding: 0;
+     }
+     @include respond(phone){
+      width: 100%;
+     }
   }
   &__left {
     width: 33.33333%;
@@ -36,10 +48,16 @@
     display: table-cell;
     vertical-align: middle;
     padding: 2rem 3.5rem;
+    @include respond(tab-port){
+      padding: 1rem 1.5rem;
+     }
   }
   &__img {
     display: block;
     width: 100%;
+    @include respond(tab-port){
+      height: 25vh;
+     }
   }
   &__text {
     font-size: 1.4rem;
