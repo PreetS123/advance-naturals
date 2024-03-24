@@ -23,6 +23,7 @@
     height: 15rem;
     background-color: aqua;
     float: left;
+    overflow: hidden;
     shape-outside: circle(
       50% at 50% 50%
     ); //first parameter is radius i.e 50% of 15rem and then co-ordinate of circle
